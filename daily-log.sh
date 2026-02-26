@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# สุ่มหน่วงเวลา 0-6 ชั่วโมง (0-21600 วินาที)
+# random delay 0-6 hours
 SLEEP_TIME=$((RANDOM % 21600))
 sleep $SLEEP_TIME
 
@@ -24,4 +24,5 @@ RANDOM_MSG=${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}
 echo "## $DATE" >> DAILY_LOG.md
 echo "- $RANDOM_MSG" >> DAILY_LOG.md
 echo "" >> DAILY_LOG.md
+
 
