@@ -19,7 +19,9 @@ jobs:
         run: chmod +x daily-log.sh
 
       - name: Run script
-        run: ./daily-log.sh
+  run: |
+    sed -i 's/\r$//' daily-log.sh
+    bash daily-log.sh
 
       - name: Commit changes
         run: |
