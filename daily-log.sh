@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 SLEEP_TIME=$((RANDOM % 21600))
 sleep $SLEEP_TIME
@@ -16,4 +16,3 @@ RANDOM_MSG=${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}
 echo "## $DATE" >> DAILY_LOG.md
 echo "- $RANDOM_MSG" >> DAILY_LOG.md
 echo "" >> DAILY_LOG.md
-
