@@ -1,6 +1,7 @@
-name: Daily Automation
-
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -13,3 +14,4 @@ jobs:
             - name: Run script
         run: bash daily-log.sh
       
+enable push trigger
