@@ -1,1 +1,30 @@
+name: Daily Automation
 
+on:
+  schedule:
+    - cron: '0 3 * * *'   # รันทุกวัน 10:00 เช้าไทย (UTC+7)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-daily-log:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Make script executable
+        run: chmod +x daily-log.sh
+
+      - name: Run script
+        run: ./daily-log.sh
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add DAILY_LOG.md
+          git commit -m "Daily auto update" || echo "No changes"
+          git push
