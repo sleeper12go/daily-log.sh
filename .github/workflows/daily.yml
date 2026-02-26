@@ -10,7 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run script
-        run: |
-          chmod +x daily-log.sh
-          ./daily-log.sh
+            - name: Run script
+        run: bash daily-log.sh
+      
