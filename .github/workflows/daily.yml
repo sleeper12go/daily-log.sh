@@ -12,8 +12,11 @@ jobs:
   run-daily-log:
     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
+   steps:
+  - uses: actions/checkout@v3
 
-      - name: Run script
-        run: bash daily-log.sh
+  - name: Make script executable
+    run: chmod +x daily-log.sh
+
+  - name: Run script
+    run: ./daily-log.sh
