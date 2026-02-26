@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 SLEEP_TIME=$((RANDOM % 21600))
 sleep $SLEEP_TIME
