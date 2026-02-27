@@ -1,6 +1,8 @@
 name: Daily Automation
 
 on:
+  schedule:
+    - cron: '0 3 * * *'
   workflow_dispatch:
 
 permissions:
